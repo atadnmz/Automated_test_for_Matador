@@ -108,7 +108,7 @@ doubleClick("1499112866883.png")
 type("-70") 
 type(Key.ENTER)
 doubleClick("1499112919605.png")
-type("400") 
+type("50") 
 type(Key.ENTER)
 if not exists(Pattern("1499112958643.png").exact()):
     popup("Error found at requirement "+str(testCount))########## 11
