@@ -1,0 +1,206 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>Test1.sikuli</h2> <a href="Test1.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+switchApp(<span class="str">"dd.txt - Notepad"</span>)
+switchApp(<span class="str">"matador"</span>)
+testCount = <span class="dig">1</span>
+<span class="skw">wait</span>(<span class="dig">1</span>)
+Settings.WaitScanRate = <span class="dig">10</span>
+Settings.MoveMouseDelay = <span class="dig">0</span>
+<span class="kw">def</span> switchCheck(image):
+    switch = True
+    <span class="kw">while</span>(switch):
+        focus(<span class="str">"MATADOR"</span>)
+        <span class="kw">if</span> exists(image):
+            switch = False
+    <span class="kw">return</span>
+<span class="kw">def</span> MessageBoxSelect(image,str):
+    MessageBox = True
+    <span class="kw">while</span>(MessageBox):
+        switchApp(<span class="str">"Rodeo :: Test Driver for Matador - 2.2.0"</span>)
+        <span class="kw">if</span>(<span class="skw">find</span>(<img src="1499086577897.png" />)):
+            <span class="skw">type</span>(<img src="1499086014992.png" />,str)
+            check = True
+            count = <span class="dig">0</span>
+            <span class="kw">while</span>(check <span class="kw">and</span> count&lt;<span class="dig">25</span>):
+                <span class="kw">if</span>(exists(image,<span class="dig">0</span>)):
+                    check = False
+                <span class="skw">type</span>(Key.DOWN)
+                count= count+<span class="dig">1</span>
+            <span class="skw">type</span>(Key.UP)
+            <span class="skw">type</span>(Key.ENTER)
+        <span class="cmt">#if(find(image)):</span>
+         <span class="cmt">#   type("1499087187403.png","n")        </span>
+          <span class="cmt">#  click(Pattern("1499087096892.png").similar(0.60))</span>
+        <span class="cmt">#    type(Key.ENTER)</span>
+            MessageBox = False
+    <span class="kw">return</span>
+MessageBoxSelect(Pattern(<span class="str">"IM-1.PNG"</span>).similar(<span class="dig">0.95</span>),<span class="str">"I"</span>)
+<span class="skw">click</span>(<img src="1499104325413.png" />)
+MessageBoxSelect(<span class="str">"KM.PNG"</span>,<span class="str">"k"</span>)
+<span class="skw">type</span>(<img src="1499104414963.png" />,<span class="str">"n"</span>)
+<span class="skw">type</span>(Key.ENTER)
+<span class="skw">click</span>(<img src="1499104325413.png" />)
+<span class="skw">click</span>(<img src="1499110294997.png" />)
+
+<span class="skw">click</span>(<img src="1499108791334.png" />)
+<span class="skw">click</span>(<img src="1499108819861.png" />)
+<span class="skw">click</span>(<img src="1499108867406.png" />)
+<span class="skw">click</span>(<img src="1499108976780.png" />)
+<span class="kw">if</span> <span class="kw">not</span> exists(<img src="1499105128109.png" />):
+    <span class="skw">popup</span>(<span class="str">"Error found at requirement "</span>+str(testCount))<span class="cmt">########## 1</span>
+testCount=testCount+<span class="dig">1</span>
+<span class="skw">type</span>(<img src="1499109492150.png" />,<span class="str">"g"</span>)
+<span class="skw">type</span>(Key.ENTER)
+<span class="skw">click</span>(<img src="1499109534270.png" />)
+switchApp(<span class="str">"Rodeo :: Test Driver for Matador - 2.2.0"</span>)
+<span class="kw">if</span> <span class="kw">not</span> exists(<img src="1499110422261.png" />):
+    <span class="skw">popup</span>(<span class="str">"Error found at requirement "</span>+str(testCount))<span class="cmt">########## 2</span>
+testCount=testCount+<span class="dig">1</span>
+<span class="skw">click</span>(<img src="1499110771370.png" />)
+<span class="skw">click</span>(<img src="1499108791334.png" />)
+<span class="skw">click</span>(<img src="1499110861538.png" />)
+<span class="skw">doubleClick</span>(<img src="1499110896096.png" />)
+<span class="skw">type</span>(<span class="str">"54"</span>)
+<span class="skw">type</span>(Key.ENTER)
+<span class="kw">if</span> <span class="kw">not</span> exists(<img src="1499111313556.png" />):
+    <span class="skw">popup</span>(<span class="str">"Error found at requirement "</span>+str(testCount))<span class="cmt">########## 3</span>
+testCount=testCount+<span class="dig">1</span>
+<span class="skw">doubleClick</span>(<img src="1499110896096.png" />)
+<span class="skw">type</span>(<span class="str">"54,5"</span>)
+<span class="kw">if</span> <span class="kw">not</span> exists(Pattern(<img src="1499111713879.png" />).similar(<span class="dig">0.90</span>)):
+    <span class="skw">popup</span>(<span class="str">"Error found at requirement "</span>+str(testCount))<span class="cmt">########## 4</span>
+testCount=testCount+<span class="dig">1</span>
+<span class="skw">doubleClick</span>(<img src="1499111960332.png" />)
+<span class="skw">type</span>(<span class="str">"32"</span>)
+<span class="skw">type</span>(Key.ENTER)
+<span class="kw">if</span> <span class="kw">not</span> exists(<img src="1499112219489.png" />):
+    <span class="skw">popup</span>(<span class="str">"Error found at requirement "</span>+str(testCount))<span class="cmt">########## 5</span>
+testCount=testCount+<span class="dig">1</span>
+<span class="skw">doubleClick</span>(<img src="1499111960332.png" />)
+<span class="skw">type</span>(<span class="str">"32,5"</span>)
+<span class="kw">if</span> <span class="kw">not</span> exists(<img src="1499112322777.png" />):
+    <span class="skw">popup</span>(<span class="str">"Error found at requirement "</span>+str(testCount))<span class="cmt">########## 6</span>
+testCount=testCount+<span class="dig">1</span>
+<span class="skw">doubleClick</span>(<img src="1499111960332.png" />)
+<span class="skw">type</span>(<span class="str">"181"</span>)
+<span class="skw">type</span>(Key.ENTER)
+<span class="kw">if</span> <span class="kw">not</span> exists(<img src="1499112219489.png" />):
+    <span class="skw">popup</span>(<span class="str">"Error found at requirement "</span>+str(testCount))<span class="cmt">########## 7</span>
+testCount=testCount+<span class="dig">1</span>
+<span class="skw">doubleClick</span>(<img src="1499111960332.png" />)
+<span class="skw">type</span>(<span class="str">"180"</span>)
+<span class="skw">type</span>(Key.ENTER)
+<span class="kw">if</span> <span class="kw">not</span> exists(<img src="1499112546055.png" />):
+    <span class="skw">popup</span>(<span class="str">"Error found at requirement "</span>+str(testCount))<span class="cmt">########## 8</span>
+testCount=testCount+<span class="dig">1</span>
+<span class="skw">doubleClick</span>(<img src="1499112611135.png" />)
+<span class="skw">type</span>(<span class="str">"181"</span>)
+<span class="skw">type</span>(Key.ENTER)
+<span class="kw">if</span> <span class="kw">not</span> exists(<img src="1499112611135.png" />):
+    <span class="skw">popup</span>(<span class="str">"Error found at requirement "</span>+str(testCount))<span class="cmt">########## 9</span>
+testCount=testCount+<span class="dig">1</span>
+<span class="skw">doubleClick</span>(<img src="1499112611135.png" />)
+<span class="skw">type</span>(<span class="str">"180"</span>)
+<span class="skw">type</span>(Key.ENTER)
+<span class="kw">if</span> <span class="kw">not</span> exists(<img src="1499112745900.png" />):
+    <span class="skw">popup</span>(<span class="str">"Error found at requirement "</span>+str(testCount))<span class="cmt">########## 10</span>
+testCount=testCount+<span class="dig">1</span>
+<span class="skw">doubleClick</span>(<img src="1499112866883.png" />)
+<span class="skw">type</span>(<span class="str">"-70"</span>)
+<span class="skw">type</span>(Key.ENTER)
+<span class="skw">doubleClick</span>(<img src="1499112919605.png" />)
+<span class="skw">type</span>(<span class="str">"400"</span>)
+<span class="skw">type</span>(Key.ENTER)
+<span class="kw">if</span> <span class="kw">not</span> exists(Pattern(<img src="1499112958643.png" />).exact()):
+    <span class="skw">popup</span>(<span class="str">"Error found at requirement "</span>+str(testCount))<span class="cmt">########## 11</span>
+testCount=testCount+<span class="dig">1</span>
+<span class="skw">doubleClick</span>(<img src="1499113023698.png" />)
+<span class="skw">type</span>(<span class="str">"-1"</span>)
+<span class="skw">type</span>(Key.ENTER)
+<span class="kw">if</span> <span class="kw">not</span> exists(<img src="1499113066650.png" />):
+    <span class="skw">popup</span>(<span class="str">"Error found at requirement "</span>+str(testCount))<span class="cmt">########## 12</span>
+testCount=testCount+<span class="dig">1</span>
+<span class="skw">doubleClick</span>(<img src="1499113023698.png" />)
+<span class="skw">type</span>(<span class="str">"-1"</span>)
+<span class="skw">type</span>(Key.ENTER)
+<span class="kw">if</span> <span class="kw">not</span> exists(<img src="1499113066650.png" />):
+    <span class="skw">popup</span>(<span class="str">"Error found at requirement "</span>+str(testCount))<span class="cmt">########## 13</span>
+testCount=testCount+<span class="dig">1</span>
+
+
+
+
+<span class="skw">popup</span>(<span class="str">"No Error found"</span>)
+</pre>
+</body>
+</html>
